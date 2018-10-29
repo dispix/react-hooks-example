@@ -30,9 +30,9 @@ function GameProvider({ children }) {
                 ...state.previousState,
                 nextState: state
               }
-            : nothing;
+            : state;
         case "redo":
-          return state.nextState || nothing;
+          return state.nextState || state;
         case "resize":
           return makeInitialState(action.size);
         default:
